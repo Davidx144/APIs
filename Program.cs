@@ -1,15 +1,29 @@
+using proyectoef;
+using proyectoef.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//agregamos conexion a la base de datos
+builder.Services.AddSqlServer<TareasContext>(builder.Configuration.GetConnectionString("cnTareas"));
+
 
 // Add services to the container.
 
+//Aqui se ponen las dependencias 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //aqui se inyenctan las dependencias
+//Esta forma se usa cuando se ñe tiene que pasar algo especifico dentro de la clase
 builder.Services.AddScoped<IHelloWorldService>(p=> new HelloWorldService());
+builder.Services.AddScoped<ITareasService, TareasService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
+
+
+//Y aqui se ponen los middlewares
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -36,6 +36,7 @@ public class WeatherForecastController : ControllerBase
     [Route("[action]")] */
     public IEnumerable<WeatherForecast> GetQ()
     {
+        _logger.LogInformation("GetWeatherForecastLogin");
         return ListWeatherForecast;
     }
 
@@ -60,3 +61,35 @@ public class WeatherForecastController : ControllerBase
 
     
 }
+
+
+
+
+
+
+/* using Microsoft.AspNetCore.Mvc;
+
+namespace webapi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class HelloWorldController : ControllerBase
+
+{
+    private readonly ILogger<HelloWorldController> _logger;
+    IHelloWorldService helloWorldService;
+
+    public HelloWorldController(IHelloWorldService helloWorld ,ILogger<HelloWorldController> logger)
+    {
+        _logger = logger;
+
+        helloWorldService = helloWorld;
+    }
+
+    [HttpGet]
+    public IActionResult Get()
+    {
+        _logger.LogInformation("GetHelloWorldLogin");
+        return Ok(helloWorldService.GetHelloWorld());
+    }
+} */
