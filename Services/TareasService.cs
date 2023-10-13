@@ -5,9 +5,9 @@ namespace proyectoef.Services;
 public class TareasService : ITareasService
 {
     //optenemos el contexto de la base de datos
-    TareasContext context;
+    APIContext context;
     //pasamos el contexto a al constructor
-    public TareasService(TareasContext dbcontext)
+    public TareasService(APIContext dbcontext)
     {
         context = dbcontext;
     }

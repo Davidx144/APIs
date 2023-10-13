@@ -10,8 +10,8 @@ using proyectoef;
 
 namespace APIs.Migrations
 {
-    [DbContext(typeof(TareasContext))]
-    partial class TareasContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(APIContext))]
+    partial class APIContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

@@ -3,8 +3,8 @@ using proyectoef.Models;
 namespace proyectoef.Services;
 public class CategoriaService : ICategoriaService
 {
-    TareasContext context;
-    public CategoriaService(TareasContext dbcontext)
+    APIContext context;
+    public CategoriaService(APIContext dbcontext)
     {
         context = dbcontext;
     }
