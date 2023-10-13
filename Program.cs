@@ -4,7 +4,7 @@ using proyectoef.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 //agregamos conexion a la base de datos
-builder.Services.AddSqlServer<TareasContext>(builder.Configuration.GetConnectionString("cnTareas"));
+builder.Services.AddSqlServer<APIContext>(builder.Configuration.GetConnectionString("cnTareas"));
 
 
 // Add services to the container.
@@ -17,11 +17,13 @@ builder.Services.AddSwaggerGen();
 
 //aqui se inyenctan las dependencias
 //Esta forma se usa cuando se ñe tiene que pasar algo especifico dentro de la clase
-builder.Services.AddScoped<IHelloWorldService>(p=> new HelloWorldService());
+/* builder.Services.AddScoped<IHelloWorldService>(p => new HelloWorldService());
 builder.Services.AddScoped<ITareasService, TareasService>();
-builder.Services.AddScoped<ICategoriaService, CategoriaService>();
-
-
+builder.Services.AddScoped<ICategoriaService, CategoriaService>(); */
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<IDesignService, DesignService>();
+builder.Services.AddScoped<IFlyesService, FlyesService>();
 
 //Y aqui se ponen los middlewares
 var app = builder.Build();
