@@ -12,6 +12,11 @@ public class CategoryService : ICategoryService
         return context.Categories;
     }
 
+    public Category GetById(Guid id)
+    {
+        return context.Categories.Find(id);
+    }
+
     public async Task Save(Category category)
     {
         context.Add(category);
@@ -45,6 +50,7 @@ public class CategoryService : ICategoryService
 public interface ICategoryService
 {
     IEnumerable<Category> Get();
+    Category GetById(Guid id);
     Task Save(Category category);
     Task Update(Guid id, Category category);
     Task Delete(Guid id);

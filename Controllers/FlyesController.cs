@@ -21,6 +21,18 @@ public class FlyesController: ControllerBase
         return Ok(flyesService.Get());
     }
 
+    [HttpGet("{id}")]
+    public IActionResult GetById(Guid id)
+    {
+        return Ok(flyesService.GetById(id));
+    }
+
+    [HttpGet("design/{designId}")]
+    public IActionResult GetByDesignId(Guid designId)
+    {
+        return Ok(flyesService.GetByDesignId(designId));
+    }
+
     [HttpPost]
     public IActionResult Post([FromBody] Flyes flyes)
     {

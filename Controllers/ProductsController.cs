@@ -21,6 +21,18 @@ public class ProductsController: ControllerBase
         return Ok(productsService.Get());
     }
 
+    [HttpGet("{id}")]
+    public IActionResult Get(Guid id)
+    {
+        return Ok(productsService.GetById(id));
+    }
+
+    [HttpGet("category/{categoryId}")]
+    public IActionResult GetByCategoryId(Guid categoryId)
+    {
+        return Ok(productsService.GetByCategoryId(categoryId));
+    }
+
     [HttpPost]
     public IActionResult Post([FromBody] Products products)
     {

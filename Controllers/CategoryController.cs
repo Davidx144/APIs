@@ -21,6 +21,12 @@ public class CategoryController: ControllerBase
         return Ok(categoryService.Get());
     }
 
+    [HttpGet("{id}")]
+    public IActionResult GetById(Guid id)
+    {
+        return Ok(categoryService.GetById(id));
+    }
+
     [HttpPost]
     public IActionResult Post([FromBody] Category category)
     {

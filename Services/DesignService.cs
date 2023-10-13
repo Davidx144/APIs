@@ -13,6 +13,17 @@ public class DesignService : IDesignService
         return context.Designs;
     }
 
+    public Design GetById(Guid id)
+    {
+        return context.Designs.Find(id);
+    }
+
+    public IEnumerable<Design> GetByProductId(Guid productId)
+    {
+        return context.Designs.Where(p => p.ProductId == productId);
+    }
+
+
     public async Task Save(Design design)
     {
         design.CreationDate = DateTime.Now;
@@ -46,6 +57,8 @@ public class DesignService : IDesignService
 public interface IDesignService
 {
     IEnumerable<Design> Get();
+    Design GetById(Guid id);
+    IEnumerable<Design> GetByProductId(Guid categoryId);
     Task Save(Design design);
     Task Update(Guid id, Design design);
     Task Delete(Guid id);

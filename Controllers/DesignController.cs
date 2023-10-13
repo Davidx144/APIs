@@ -20,6 +20,18 @@ public class DesignController: ControllerBase
         return Ok(designService.Get());
     }
 
+    [HttpGet("{id}")]
+    public IActionResult GetById(Guid id)
+    {
+        return Ok(designService.GetById(id));
+    }
+
+    [HttpGet("product/{productId}")]
+    public IActionResult GetByProductId(Guid productId)
+    {
+        return Ok(designService.GetByProductId(productId));
+    }
+
     [HttpPost]
     public IActionResult Post([FromBody] Design design)
     {

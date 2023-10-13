@@ -13,6 +13,17 @@ public class FlyesService : IFlyesService
         return context.Flyes;
     }
 
+    public Flyes GetById(Guid id)
+    {
+        return context.Flyes.Find(id);
+    }
+
+    public IEnumerable<Flyes> GetByDesignId(Guid desingId)
+    {
+        return context.Flyes.Where(p => p.DesignId == desingId);
+    }
+
+
     public async Task Save(Flyes flyes)
     {
         flyes.CreationDate = DateTime.Now;
@@ -47,6 +58,8 @@ public class FlyesService : IFlyesService
 public interface IFlyesService
 {
     IEnumerable<Flyes> Get();
+    Flyes GetById(Guid id);
+    IEnumerable<Flyes> GetByDesignId(Guid desingId);
     Task Save(Flyes flyes);
     Task Update(Guid id, Flyes flyes);
     Task Delete(Guid id);

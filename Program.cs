@@ -17,9 +17,9 @@ builder.Services.AddSwaggerGen();
 
 //aqui se inyenctan las dependencias
 //Esta forma se usa cuando se ñe tiene que pasar algo especifico dentro de la clase
-builder.Services.AddScoped<IHelloWorldService>(p => new HelloWorldService());
+/* builder.Services.AddScoped<IHelloWorldService>(p => new HelloWorldService());
 builder.Services.AddScoped<ITareasService, TareasService>();
-builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>(); */
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddScoped<IDesignService, DesignService>();

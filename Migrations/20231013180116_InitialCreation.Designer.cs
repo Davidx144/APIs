@@ -12,7 +12,7 @@ using proyectoef;
 namespace APIs.Migrations
 {
     [DbContext(typeof(APIContext))]
-    [Migration("20231013165212_InitialCreation")]
+    [Migration("20231013180116_InitialCreation")]
     partial class InitialCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,59 +23,6 @@ namespace APIs.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("proyectoef.Models.Categoria", b =>
-                {
-                    b.Property<Guid>("CategoriaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Descripcion")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int>("Peso")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriaId");
-
-                    b.ToTable("Categoria", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CategoriaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Tareas relacionadas con el trabajo",
-                            Nombre = "Trabajo",
-                            Peso = 60
-                        },
-                        new
-                        {
-                            CategoriaId = new Guid("b1b0b0a0-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Tareas personales",
-                            Nombre = "Personal",
-                            Peso = 30
-                        },
-                        new
-                        {
-                            CategoriaId = new Guid("c2c0c0a0-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Tareas de ocio",
-                            Nombre = "Ocio",
-                            Peso = 10
-                        },
-                        new
-                        {
-                            CategoriaId = new Guid("d3d0d0a0-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Tareas relacionadas con los estudios",
-                            Nombre = "Estudios",
-                            Peso = 20
-                        });
-                });
 
             modelBuilder.Entity("proyectoef.Models.Category", b =>
                 {
@@ -168,7 +115,7 @@ namespace APIs.Migrations
                         new
                         {
                             DesignId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108678"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 85, DateTimeKind.Local).AddTicks(6251),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 570, DateTimeKind.Local).AddTicks(3069),
                             Descripcion = "Provide a memorable takeaway with our collection of professionally-designed flyers.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/Interior/Captura+de+pantalla+2023-09-26+111128.png",
                             Name = "Listing",
@@ -178,7 +125,7 @@ namespace APIs.Migrations
                         new
                         {
                             DesignId = new Guid("d6f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a96"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 85, DateTimeKind.Local).AddTicks(6264),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 570, DateTimeKind.Local).AddTicks(3089),
                             Descripcion = "Explore a variety of postcards designed for every occasion.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/Interior/openhouse.jpg",
                             Name = "Open House",
@@ -225,7 +172,7 @@ namespace APIs.Migrations
                         new
                         {
                             FlyesId = new Guid("d6f869a2-4d5f-4a7c-9c3d-3e7f7e8d2a96"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 86, DateTimeKind.Local).AddTicks(4851),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 570, DateTimeKind.Local).AddTicks(3883),
                             Descripcion = "Royal Blue 2 Sided Flyes",
                             DesignId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108678"),
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/Interior/Captura+de+pantalla+2023-09-26+111128.png",
@@ -235,7 +182,7 @@ namespace APIs.Migrations
                         new
                         {
                             FlyesId = new Guid("d658c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a96"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 86, DateTimeKind.Local).AddTicks(4862),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 570, DateTimeKind.Local).AddTicks(3890),
                             Descripcion = "Nova Flyes",
                             DesignId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108678"),
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/Interior/Captura+de+pantalla+2023-09-26+111128.png",
@@ -245,7 +192,7 @@ namespace APIs.Migrations
                         new
                         {
                             FlyesId = new Guid("d1f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a96"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 86, DateTimeKind.Local).AddTicks(4865),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 570, DateTimeKind.Local).AddTicks(3897),
                             Descripcion = "Suave Flyes",
                             DesignId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108678"),
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/Interior/Captura+de+pantalla+2023-09-26+111128.png",
@@ -293,7 +240,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108661"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8667),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8845),
                             Descripcion = "Provide a memorable takeaway with our collection of professionally-designed flyers.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Flyer_650x650.png",
                             Name = "Flyers",
@@ -303,7 +250,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("d6f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8680),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8866),
                             Descripcion = "Explore a variety of postcards designed for every occasion.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Postcard_650x650_1.png",
                             Name = "PostCards",
@@ -313,7 +260,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("b6f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8683),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8870),
                             Descripcion = "Advertise your listing with our luxury 8-page booklets and classic brochures.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Brochure_650x650_1.png",
                             Name = "Brochures",
@@ -323,7 +270,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("a6f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8686),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8874),
                             Descripcion = "Engage with your audience by using our ready-to-share social media items.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Social_Media_650x650.png",
                             Name = "Social Media",
@@ -333,7 +280,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("96f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8689),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8878),
                             Descripcion = "Walled Garden integration to automate and easily launch Facebook ads.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_thumb-ref3.png",
                             Name = "FaceBook Ads",
@@ -343,7 +290,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("86f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8694),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8885),
                             Descripcion = "Level up your marketing using single property sites.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Laptop_650x650.png",
                             Name = "Single Property Sites",
@@ -353,7 +300,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("76f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8696),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8887),
                             Descripcion = "Attract attention to your listings, open house, or yourself with a customizable door hanger.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Doorhanger_650x650.png",
                             Name = "Door Hangers",
@@ -363,7 +310,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("66f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8699),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8892),
                             Descripcion = "Make an impression on your clients with our elegant presentations.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Presentation_650x650.png",
                             Name = "Presentations",
@@ -373,7 +320,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("56f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8703),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8898),
                             Descripcion = "Educate your sphere about the real estate industry with our informative videos.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Video_Mockup_650x650.png",
                             Name = "Videos",
@@ -383,7 +330,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("46f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8709),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8907),
                             Descripcion = "Connect with past and future clients with pre-written letters and customizable letterheads.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Letter_650x650.png",
                             Name = "Letter/LetterHeads",
@@ -393,7 +340,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("36f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8711),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8912),
                             Descripcion = "Cover your bases with the help of these branded documents.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Helpful_Docs_650x650.png",
                             Name = "Helpful Documents",
@@ -403,7 +350,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("26f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8715),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8914),
                             Descripcion = "Create a first and lasting impression by using one of a variety of branded business cards.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Business_Card_650x650.png",
                             Name = "Business Cards",
@@ -413,7 +360,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("16f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8719),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8919),
                             Descripcion = "Keep your communications branded with the information your contacts need.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Email_Signature_650x650.png",
                             Name = "Email Signatures",
@@ -423,7 +370,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("06f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8722),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8922),
                             Descripcion = "Keep your sphere informed and updated with industry insights and other helpful topics.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Newsletter_650x650.png",
                             Name = "NewsLetters",
@@ -433,7 +380,7 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("f6f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8726),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8925),
                             Descripcion = "Appeal to Spanish-speaking audiences with our variety of Spanish marketing items.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_crop_Spanish_Marketing_650x650.png",
                             Name = "Spanish Materials",
@@ -443,89 +390,11 @@ namespace APIs.Migrations
                         {
                             ProductId = new Guid("e6f8c9a2-4d5f-4a7c-9c3d-3e7f7e8d2a1a"),
                             CategoryId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108671"),
-                            CreationDate = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(8730),
+                            CreationDate = new DateTime(2023, 10, 13, 13, 1, 16, 569, DateTimeKind.Local).AddTicks(8927),
                             Descripcion = "Download partner resources to provide your clients with valuable information.",
                             ImageUrl = "https://gmbb20.s3.amazonaws.com/home/crop_eXp_Solutions_650x650.png",
                             Name = "eXp Solutions",
                             StatusProduct = 0
-                        });
-                });
-
-            modelBuilder.Entity("proyectoef.Models.Tarea", b =>
-                {
-                    b.Property<Guid>("TareaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CategoriaId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Descripcion")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PrioridadTarea")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Titulo")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.HasKey("TareaId");
-
-                    b.HasIndex("CategoriaId");
-
-                    b.ToTable("Tarea", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            TareaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108661"),
-                            CategoriaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Realizar el back segun mokups en .Net y C#",
-                            FechaCreacion = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(5648),
-                            PrioridadTarea = 2,
-                            Titulo = "Hacer le back en .Net"
-                        },
-                        new
-                        {
-                            TareaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108662"),
-                            CategoriaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Realizar el front segun mokups en Angular",
-                            FechaCreacion = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(5662),
-                            PrioridadTarea = 2,
-                            Titulo = "Hacer le front en Angular"
-                        },
-                        new
-                        {
-                            TareaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108663"),
-                            CategoriaId = new Guid("b1b0b0a0-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Ordenar la cocina",
-                            FechaCreacion = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(5664),
-                            PrioridadTarea = 0,
-                            Titulo = "Hacer le front en React"
-                        },
-                        new
-                        {
-                            TareaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108664"),
-                            CategoriaId = new Guid("c2c0c0a0-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Ordenar la pecera y alimentar a los peces",
-                            FechaCreacion = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(5667),
-                            PrioridadTarea = 1,
-                            Titulo = "dar de comer a los peces"
-                        },
-                        new
-                        {
-                            TareaId = new Guid("ae6f2420-78ac-4145-b2d9-6de49e108665"),
-                            CategoriaId = new Guid("c2c0c0a0-78ac-4145-b2d9-6de49e10867e"),
-                            Descripcion = "Realizar el front segun mokups en Vue",
-                            FechaCreacion = new DateTime(2023, 10, 13, 11, 52, 12, 83, DateTimeKind.Local).AddTicks(5669),
-                            PrioridadTarea = 2,
-                            Titulo = "Hacer le front en Vue"
                         });
                 });
 
@@ -560,22 +429,6 @@ namespace APIs.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("proyectoef.Models.Tarea", b =>
-                {
-                    b.HasOne("proyectoef.Models.Categoria", "Categoria")
-                        .WithMany("Tareas")
-                        .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Categoria");
-                });
-
-            modelBuilder.Entity("proyectoef.Models.Categoria", b =>
-                {
-                    b.Navigation("Tareas");
                 });
 
             modelBuilder.Entity("proyectoef.Models.Category", b =>

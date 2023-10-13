@@ -13,6 +13,17 @@ public class ProductsService : IProductsService
         return context.Products;
     }
 
+
+    public Products GetById(Guid id)
+    {
+        return context.Products.Find(id);
+    }
+
+    public IEnumerable<Products> GetByCategoryId(Guid categoryId)
+    {
+        return context.Products.Where(p => p.CategoryId == categoryId);
+    }
+
     public async Task Save(Products products)
     {
         products.CreationDate = DateTime.Now;
@@ -47,6 +58,8 @@ public class ProductsService : IProductsService
 public interface IProductsService
 {
     IEnumerable<Products> Get();
+    Products GetById(Guid id);
+    IEnumerable<Products> GetByCategoryId(Guid categoryId);
     Task Save(Products products);
     Task Update(Guid id, Products products);
     Task Delete(Guid id);
