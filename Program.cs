@@ -21,8 +21,9 @@ builder.Services.AddScoped<IHelloWorldService>(p => new HelloWorldService());
 builder.Services.AddScoped<ITareasService, TareasService>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-
-
+builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<IDesignService, DesignService>();
+builder.Services.AddScoped<IFlyesService, FlyesService>();
 
 //Y aqui se ponen los middlewares
 var app = builder.Build();
