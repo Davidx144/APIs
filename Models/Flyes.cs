@@ -8,6 +8,6 @@ public class Flyes
     public string Descripcion { get; set; }
     public string ImageUrl { get; set; }
     public DateTime CreationDate { get; set; }
-    public Status StatusFlyes { get; set; }
+    public Status StatusFlyes { get; set; } = Status.Active;
     public virtual Design Design { get; set; }
 }

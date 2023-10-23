@@ -50,7 +50,7 @@ namespace proyectoef.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Category category)
         {
-            if (string.IsNullOrEmpty(category.Name) && string.IsNullOrEmpty(category.Descripcion) && string.IsNullOrEmpty(category.statusCategory))
+            if (string.IsNullOrEmpty(category.Name) || string.IsNullOrEmpty(category.Descripcion))
             {
                 return BadRequest("Category name, descripcion or status are required");
             }

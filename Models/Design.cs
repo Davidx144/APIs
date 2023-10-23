@@ -11,7 +11,7 @@ public class Design
     public string ImageUrl { get; set; }
 
     public DateTime CreationDate { get; set; }
-    public Status StatusDesign{get;set;}
+    public Status StatusDesign{get;set;} = Status.Active;
     public virtual Products Product {get;set;}
     
     [JsonIgnore]

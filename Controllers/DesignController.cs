@@ -68,7 +68,7 @@ namespace proyectoef.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Design design)
         {
-            if (design == null || design.ProductId == Guid.Empty || string.IsNullOrEmpty(design.Name) || string.IsNullOrEmpty(design.Descripcion))
+            if (design.ProductId == Guid.Empty || string.IsNullOrEmpty(design.Name) || string.IsNullOrEmpty(design.Descripcion))
             {
                 return BadRequest("Product ID, name, and description are required.");
             }

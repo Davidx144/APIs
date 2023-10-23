@@ -12,7 +12,7 @@ public class Products
     public string Descripcion { get; set; }
     public string ImageUrl { get; set; }
     public DateTime CreationDate { get; set; }
-    public Status StatusProduct{get;set;}
+    public Status StatusProduct{get;set;} = Status.Active;
     public virtual Category Category {get;set;}
     [JsonIgnore]
     public virtual ICollection<Design> Designs { get; set; }

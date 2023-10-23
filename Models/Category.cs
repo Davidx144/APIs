@@ -10,7 +10,7 @@ public class Category
     public Guid CategoryId { get; set; }
     public string Name { get; set; }
     public string Descripcion { get; set; }
-    public Status StatusCategory {get;set;}
+    public Status StatusCategory { get; set; } = Status.Active;
     [JsonIgnore]
     public virtual ICollection<Products> Products { get; set; }
 }
