@@ -5,6 +5,8 @@ namespace proyectoef.Models;
 
 public class Category
 {
+    internal string? statusCategory;
+
     public Guid CategoryId { get; set; }
     public string Name { get; set; }
     public string Descripcion { get; set; }
